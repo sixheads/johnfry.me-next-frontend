@@ -1,0 +1,40 @@
+.nav {
+  border-top: 10px solid var(--aqua);
+  padding-top: 2rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    @media (min-width: 768px) {
+      grid-gap: 1.5rem;
+    }
+  }
+
+  li {
+    border-top: var(--line);
+  }
+  a {
+    display: block;
+    color: var(--greyLight);
+    border-top: 3px solid transparent;
+    padding-top: 0.4rem;
+    font-family: var(--headingFont);
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:visited {
+      color: var(--lightGrey);
+    }
+    &:hover {
+      border-top-color: var(--aqua);
+    }
+  }
+  a.active {
+    border-top-color: var(--aqua);
+  }
+}
