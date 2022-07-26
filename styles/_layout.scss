@@ -11,7 +11,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  @include bp(md-sm) {
+  @include bp(sm) {
     grid-template-columns: 1fr 3fr;
     grid-gap: 1.5rem;
   }
@@ -19,12 +19,57 @@
 
 .site-nav,
 .site-footer {
-  @include bp(md-sm) {
+  @include bp(sm) {
     grid-column: 2 / span 1;
   }
 }
 .site-main {
-  @include bp(md-sm) {
+  @include bp(sm) {
     grid-column: 1 / span 2;
+  }
+}
+
+.site-branding,
+.site-intro {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include bp(sm) {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+// Work Grid
+.grid--work {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // justify-content: flex-start;
+  gap: 1rem;
+
+  @include bp(md) {
+    gap: 2rem;
+  }
+
+  @supports (grid-area: auto) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include bp(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .grid__item {
+    flex: 0 1 48%;
+  }
+
+  @include bp(md) {
+    .grid__item {
+      flex: 0 1 31%;
+    }
   }
 }

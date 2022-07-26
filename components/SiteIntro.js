@@ -1,8 +1,18 @@
-export default function SiteIntro() {
+import Link from 'next/link'
+import styles from '../styles/SiteIntro.module.scss'
+
+export default function SiteIntro({intro}) {
+
+  const { introText , ctaText, ctaLink } = intro.data.attributes.intro;
+
   return (
-    <div>
-      <p>Yeah G'day! My name is John Fry. I’m a freelance Melbourne-based frontend developer, specialising in custom WordPress builds. I also dabble in React.</p>
-      <p>Get in contact to discuss your project.</p>
+    <div className={`${styles.intro} site-intro`}>
+      <p>{introText}</p>
+      <p>
+        <Link href={ctaLink}>
+          <a>{ctaText}</a>
+        </Link>
+      </p>
     </div>
   )
 }

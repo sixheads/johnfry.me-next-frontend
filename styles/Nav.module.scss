@@ -20,21 +20,22 @@
   }
   a {
     display: block;
-    color: var(--greyLight);
+    color: var(--white);
     border-top: 3px solid transparent;
     padding-top: 0.4rem;
     font-family: var(--headingFont);
     font-size: 13px;
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
     &:visited {
-      color: var(--lightGrey);
+      color: var(--white);
     }
     &:hover {
       border-top-color: var(--aqua);
     }
   }
-  a.active {
-    border-top-color: var(--aqua);
-  }
+  // &.active {
+  //   border-top-color: var(--aqua);
+  // }
 }

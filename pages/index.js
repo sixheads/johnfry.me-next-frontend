@@ -1,8 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import SiteIntro from '../components/SiteIntro'
+import WorkList from '../components/WorkList'
+import { API_URL } from '../config'
 
-export default function WorkPage() {
+export default function WorkPage({ projects, page }) {
+
+  console.log(page);
+
   return (
     <>
       <Head>
@@ -11,15 +15,30 @@ export default function WorkPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SiteIntro />
+      <SiteIntro intro={page} />
+
       <main className='site-main grid'>
         <h1 className='page-title'>
-          work
+          {page.data.attributes.title}
         </h1>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, alias. Commodi, recusandae sit! Fugit accusamus non blanditiis molestias, possimus at doloremque pariatur neque hic quas quo corrupti nobis tempore labore necessitatibus sit quasi, amet maiores, vel reiciendis dolor qui perferendis provident suscipit! At minima consequatur tenetur sint neque excepturi voluptatem laudantium! Necessitatibus perspiciatis libero, quisquam vitae rerum quasi eius iste doloribus aliquam qui, possimus dolores deleniti corporis numquam laboriosam harum voluptas hic, quibusdam repellat! Qui, nemo necessitatibus est error blanditiis tempore? Expedita, dolores perspiciatis pariatur corporis sapiente iusto impedit odit laudantium necessitatibus tempora? Esse quibusdam odio architecto corporis placeat qui quae sequi voluptates, at, molestiae impedit porro illo cum enim blanditiis sed labore maiores laudantium voluptatem quos. Ratione consequatur qui, at fuga possimus nihil est quidem, officiis dolorem ipsa harum unde placeat necessitatibus debitis dolore voluptas in laborum cupiditate neque repudiandae? Eius aliquid, saepe quod culpa quia neque cumque nihil debitis quos, veniam odio et cum fugiat officia dolore! Provident, similique cupiditate. Nulla doloribus a, placeat voluptatum reiciendis quasi architecto ducimus tempore blanditiis tempora consequatur totam, pariatur provident impedit consequuntur ullam necessitatibus. Amet necessitatibus rerum autem inventore ut dolor, corporis possimus dignissimos eligendi alias quod eius veritatis consequuntur perferendis voluptates?</p>
-        </div>
+        <WorkList projects={projects} />
       </main>
     </>
   )
+}
+
+
+export async function getServerSideProps() {
+  const projectRes = await fetch(`${API_URL}/api/projects?populate=*&sort=dateCompleted:desc`);
+  const projects = await projectRes.json();
+
+  const pageRes = await fetch(`${API_URL}/api/work-page?populate=*`);
+  const page = await pageRes.json();
+
+  return {
+    props: {
+      projects,
+      page
+    }
+  }
 }

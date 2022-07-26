@@ -1,8 +1,22 @@
-h1,h2,h3,h4,h5,h6 {
-  font-family: var(--headingFont);
+body {
+
 }
 
-.page-title {
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--headingFont);
+  color: var(--eggshell);
+}
+
+p {
+  margin-bottom: 1.5rem;
+  @include font-size(14);
+  @include bp(md) {
+    @include font-size(16);
+  }
+}
+
+.page-title,
+.section-title {
   text-transform: uppercase;
   @include font-size(13);
   border-top: var(--line);
@@ -10,6 +24,23 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
+.content-title {
+  margin-bottom: 0.5rem;
+  color:var(--aqua);
+}
+
+.body-content {
+  max-width: 600px;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: var(--aqua);
+    font-weight: 400;
+    @include font-size(16);
+    @include bp(md) {
+      @include font-size(18);
+    }
+  }
+}
 
 .small {
   @include font-size(13);
