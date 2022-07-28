@@ -73,3 +73,43 @@
     }
   }
 }
+
+// Vertical Spacing
+.site-nav {
+  padding-bottom: 1rem;
+  @include bp(sm) {
+    padding-bottom: 2rem;
+  }
+  @include bp(md-sm) {
+    padding-bottom: 3rem;
+  }
+  @include bp(lg) {
+    padding-bottom: 4rem;
+  }
+}
+
+.site-branding,
+.site-intro {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include bp(sm) {
+    padding-top: 2rem;
+  }
+  @include bp(md-sm) {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.site-main {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include bp(sm) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+.site-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
