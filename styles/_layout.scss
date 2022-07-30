@@ -5,6 +5,18 @@
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  @include bp(md) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @include bp(xl) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @include bp(xx) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // Main layout grid
