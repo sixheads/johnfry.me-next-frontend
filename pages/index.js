@@ -27,7 +27,7 @@ export default function WorkPage({ projects, page }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const projectRes = await fetch(
     `${API_URL}/api/projects?populate=*&sort=dateCompleted:desc`
   );
