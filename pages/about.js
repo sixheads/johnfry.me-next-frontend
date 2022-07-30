@@ -5,7 +5,6 @@ import SiteIntro from '../components/SiteIntro';
 import TextSection from '../components/TextSection';
 
 export default function AboutPage({ page }) {
-  console.log(page);
   const { title, body, section } = page.data.attributes;
 
   return (

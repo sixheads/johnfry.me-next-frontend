@@ -4,8 +4,6 @@ import WorkList from '../components/WorkList';
 import { API_URL } from '../config';
 
 export default function WorkPage({ projects, page }) {
-  console.log(page);
-
   return (
     <>
       <Head>
