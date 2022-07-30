@@ -9,9 +9,9 @@ export default function Work({ project }) {
     project.attributes.featuredImage.data.attributes.formats.medium;
   // console.log(project);
   return (
-    <li className={`${styles.work} grid__item`}>
+    <li className="grid__item work">
       <a href={projectLink}>
-        <div className={styles.workImage}>
+        <div className="work__image">
           <Image
             src={url ? url : 'fallback.jpg'}
             alt={title}
@@ -20,9 +20,9 @@ export default function Work({ project }) {
             layout="responsive"
           />
         </div>
-        <h2 className={styles.workTitle}>{title}</h2>
+        <h2 className="work__title">{title}</h2>
       </a>
-      <p className={styles.workStudio}>
+      <p className="work__studio">
         <a href={studioLink}>Designed by {studioName}</a>
       </p>
     </li>
