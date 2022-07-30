@@ -25,7 +25,14 @@ p {
   @include font-size(13);
   border-top: var(--line);
   padding-top: 0.5rem;
-  margin: 0 0 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.section-title {
+  margin-top: 2rem;
+  @include bp(sm) {
+    margin-top: 0;
+  }
 }
 
 .content-title {

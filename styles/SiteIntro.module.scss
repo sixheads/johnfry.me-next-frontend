@@ -5,6 +5,7 @@
     @include font-size(22);
     color: var(--eggshell);
     margin-bottom: 1rem;
+    max-width: 900px;
     @include bp(sm) {
       @include font-size(26);
     }
