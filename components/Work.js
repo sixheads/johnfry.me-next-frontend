@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../styles/Work.module.scss';
 
 export default function Work({ project }) {
   const { title, projectLink } = project.attributes;
