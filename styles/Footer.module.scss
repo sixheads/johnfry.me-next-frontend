@@ -3,22 +3,14 @@
 .footer {
   width: 100%;
   border-top: 1px solid var(--grey);
-  // padding-top: 0.5rem;
   display: flex;
-  flex-direction: column;
-  @include bp(md) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  flex-direction: row;
+  justify-content: space-between;
 }
 .copyright {
   flex: 1;
 }
 .email {
   flex: 1;
-  display: none;
-  @include bp(md) {
-    text-align: right;
-    display: block;
-  }
+  text-align: right;
 }
