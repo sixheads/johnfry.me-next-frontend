@@ -5,7 +5,7 @@ export default function Work({ project }) {
   const { studioName, studioLink } =
     project.attributes.studio.data.attributes;
   const { url } =
-    project.attributes.featuredImage.data.attributes.formats.medium;
+    project.attributes.featuredImage.data.attributes.formats.small;
   // console.log(project);
   return (
     <li className="grid__item work">
