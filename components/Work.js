@@ -11,7 +11,6 @@ export default function Work({ project }) {
   return (
     <li className={`${styles.work} grid__item`}>
       <a href={projectLink}>
-        <h2 className={styles.workTitle}>{title}</h2>
         <div className={styles.workImage}>
           <Image
             src={url ? url : 'fallback.jpg'}
@@ -21,6 +20,7 @@ export default function Work({ project }) {
             layout="responsive"
           />
         </div>
+        <h2 className={styles.workTitle}>{title}</h2>
       </a>
       <p className={styles.workStudio}>
         <a href={studioLink}>Designed by {studioName}</a>

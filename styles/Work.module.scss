@@ -8,13 +8,11 @@
 
   .workImage {
     border-bottom: 3px solid var(--aqua);
-    order: 1;
   }
 
   .workTitle {
     margin-top: 0.5rem;
     margin-bottom: 0;
-    order: 2;
     @include font-size(13);
     @include bp(sm) {
       @include font-size(16);
@@ -31,8 +29,7 @@
         color: var(--grey);
       }
       &:hover,
-      &:focus
-      &:active {
+      &:focus &:active {
         color: var(--aqua);
       }
     }
@@ -40,22 +37,16 @@
 
   a {
     text-decoration: none;
-    // Set as flex to allow order of heading and image to be changed
-    // Better accessibility for screen readers
-    display: flex;
-    flex-direction: column;
 
     &:hover,
-    &:focus
-    &:active {
+    &:focus &:active {
       .workImage {
-        border-bottom-color:var(--eggshell);
+        border-bottom-color: var(--eggshell);
         opacity: 0.7;
       }
       h2 {
-        color:var(--aqua);
+        color: var(--aqua);
       }
     }
   }
-
 }
