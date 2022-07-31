@@ -7,7 +7,6 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="wrapper grid page">
-        <div></div>
         <Nav />
       </div>
       <Transition>
